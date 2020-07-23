@@ -11,6 +11,14 @@ namespace UserRegistrationTest
             bool isValid = user.validFirstName("Vaidehi");
             Assert.IsTrue(isValid);
         }
+        [Test]
+        public void givenFirstName_WhenImProper_ShouldReturnFalse()
+        {
+            UserRegistration.UserRegistrationUtility user = new UserRegistration.UserRegistrationUtility();
+            bool isValid = user.validFirstName("V");
+            Assert.IsFalse(isValid);
+
+        }
 
         [Test]
         public void givenLastName_WhenProper_ShouldReturnTrue()
@@ -18,6 +26,15 @@ namespace UserRegistrationTest
             UserRegistration.UserRegistrationUtility user = new UserRegistration.UserRegistrationUtility();
             bool isValid = user.validLastName("Tathe");
             Assert.IsTrue(isValid);
+        }
+
+        [Test]
+        public void givenLastName_WhenImProper_ShouldReturnFalse()
+        {
+            UserRegistration.UserRegistrationUtility user = new UserRegistration.UserRegistrationUtility();
+            bool isValid = user.validLastName("V");
+            Assert.IsFalse(isValid);
+
         }
 
         [Test]
@@ -29,11 +46,29 @@ namespace UserRegistrationTest
         }
 
         [Test]
+        public void givenEmailID_WhenImProper_ShouldReturnFalse()
+        {
+            UserRegistration.UserRegistrationUtility user = new UserRegistration.UserRegistrationUtility();
+            bool isValid = user.validEmail("xyz.abc@com");
+            Assert.IsFalse(isValid);
+
+        }
+
+        [Test]
         public void givenPhoneNumber_WhenProper_ShouldReturnTrue()
         {
             UserRegistration.UserRegistrationUtility user = new UserRegistration.UserRegistrationUtility();
             bool isValid = user.validPhoneNumber("91 9881711714");
             Assert.IsTrue(isValid);
+        }
+
+        [Test]
+        public void givenPhoneNumber_WhenImProper_ShouldReturnFalse()
+        {
+            UserRegistration.UserRegistrationUtility user = new UserRegistration.UserRegistrationUtility();
+            bool isValid = user.validPhoneNumber("91 8987");
+            Assert.IsFalse(isValid);
+
         }
 
         [Test]
@@ -43,5 +78,31 @@ namespace UserRegistrationTest
             bool isValid = user.validPassword("ghduethb");
             Assert.IsTrue(isValid);
         }
+
+        [Test]
+        public void givenPassword_WhenImProper_ShouldReturnTrue()
+        {
+            UserRegistration.UserRegistrationUtility user = new UserRegistration.UserRegistrationUtility();
+            bool isValid = user.validPassword("ghdu");
+            Assert.IsFalse(isValid);
+        }
+
+        [Test]
+        public void givenPasswordRule2_WhenProper_ShouldReturnTrue()
+        {
+            UserRegistration.UserRegistrationUtility user = new UserRegistration.UserRegistrationUtility();
+            bool isValid = user.validPasswordRule2("Ghduethb");
+            Assert.IsTrue(isValid);
+        }
+
+        [Test]
+        public void givenPasswordRule2_WhenImProper_ShouldReturnTrue()
+        {
+            UserRegistration.UserRegistrationUtility user = new UserRegistration.UserRegistrationUtility();
+            bool isValid = user.validPasswordRule2("ghduhutg");
+            Assert.IsFalse(isValid);
+        }
+
+       
     }
 }
