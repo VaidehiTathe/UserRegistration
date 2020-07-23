@@ -26,5 +26,12 @@ namespace UserRegistration
         {
             return emailID.IsMatch(email);
         }
+
+        Regex phoneNumber = new Regex(@"[91]{1} [0-9]{10}");
+        public bool validPhoneNumber(string phonenumber)
+        {
+            return phoneNumber.IsMatch(phonenumber);
+        }
+
     }
 }
