@@ -19,5 +19,12 @@ namespace UserRegistration
         {
             return lastName.IsMatch(lname);
         }
+
+        Regex emailID = new Regex("^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}(.[a-zA-Z]{2,2})*$");
+
+        public bool validEmail(string email)
+        {
+            return emailID.IsMatch(email);
+        }
     }
 }
