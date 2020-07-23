@@ -33,5 +33,10 @@ namespace UserRegistration
             return phoneNumber.IsMatch(phonenumber);
         }
 
+        Regex password = new Regex(@"[a-zA-Z0-9]{8}");
+        public bool validPassword(string passwordCheck)
+        {
+            return password.IsMatch(passwordCheck);
+        }
     }
 }

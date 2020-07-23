@@ -35,5 +35,13 @@ namespace UserRegistrationTest
             bool isValid = user.validPhoneNumber("91 9881711714");
             Assert.IsTrue(isValid);
         }
+
+        [Test]
+        public void givenPassword_WhenProper_ShouldReturnTrue()
+        {
+            UserRegistration.UserRegistrationUtility user = new UserRegistration.UserRegistrationUtility();
+            bool isValid = user.validPassword("ghduethb");
+            Assert.IsTrue(isValid);
+        }
     }
 }
