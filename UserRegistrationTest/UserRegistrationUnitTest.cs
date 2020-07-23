@@ -103,6 +103,20 @@ namespace UserRegistrationTest
             Assert.IsFalse(isValid);
         }
 
-       
+        [Test]
+        public void givenPasswordRule3_WhenProper_ShouldReturnTrue()
+        {
+            UserRegistration.UserRegistrationUtility user = new UserRegistration.UserRegistrationUtility();
+            bool isValid = user.validPasswordRule3("vaidehi123");
+            Assert.IsTrue(isValid);
+        }
+
+        [Test]
+        public void givenPasswordRule3_WhenImProper_ShouldReturnTrue()
+        {
+            UserRegistration.UserRegistrationUtility user = new UserRegistration.UserRegistrationUtility();
+            bool isValid = user.validPasswordRule3("vaidehitathe");
+            Assert.IsFalse(isValid);
+        }
     }
 }

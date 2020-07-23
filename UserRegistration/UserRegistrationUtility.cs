@@ -45,6 +45,12 @@ namespace UserRegistration
             return passwordRule2.IsMatch(passwordRule2Check);
         }
 
-        
+        Regex passwordRule3 = new Regex("^([a-zA-Z@#!]*[0-9]+[a-zA-Z@#!]*)$");
+        public bool validPasswordRule3(string passwordRule3Check)
+        {
+            return passwordRule3.IsMatch(passwordRule3Check);
+        }
+
+
     }
 }
