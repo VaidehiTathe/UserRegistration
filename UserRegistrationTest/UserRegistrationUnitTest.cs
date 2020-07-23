@@ -118,5 +118,21 @@ namespace UserRegistrationTest
             bool isValid = user.validPasswordRule3("vaidehitathe");
             Assert.IsFalse(isValid);
         }
+
+        [Test]
+        public void givenPasswordRule4_WhenProper_ShouldReturnTrue()
+        {
+            UserRegistration.UserRegistrationUtility user = new UserRegistration.UserRegistrationUtility();
+            bool isValid = user.validPasswordRule4("vaidehi@123");
+            Assert.IsTrue(isValid);
+        }
+
+        [Test]
+        public void givenPasswordRule4_WhenImProper_ShouldReturnTrue()
+        {
+            UserRegistration.UserRegistrationUtility user = new UserRegistration.UserRegistrationUtility();
+            bool isValid = user.validPasswordRule4("vaidehitathe");
+            Assert.IsFalse(isValid);
+        }
     }
 }
